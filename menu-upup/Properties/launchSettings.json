@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "menu_upup": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7065",
+      "launchBrowser": false
+    }
+  }
+}
