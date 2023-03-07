@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using menu_upup.Config;
+using menu_upup.Config;
 using menu_upup.Entity;
-using MetricsParser;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Hosting;
 using Newtonsoft.Json;
 
 [assembly: WebJobsStartup(typeof(StartUp))]
 
-namespace MetricsParser;
+namespace menu_upup.Config;
 
 public class StartUp : IWebJobsStartup
 {
@@ -23,5 +24,6 @@ public class StartUp : IWebJobsStartup
 
     public void Configure(IWebJobsBuilder builder)
     {
+        new MenuDatabase().Database.EnsureCreated();
     }
 }
